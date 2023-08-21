@@ -3,7 +3,34 @@ const $days = document.querySelector('.timer__days');
 const $hours = document.querySelector('.timer__hours');
 const $minutes = document.querySelector('.timer__minutes');
 const $seconds = document.querySelector('.timer__seconds');
-const date = new Date(2023, 5, 22, 19, 00);
+
+const form = document.querySelector('.form');
+const formContainer = document.querySelector('.form-section');
+const formButton = document.querySelector('.form__button');
+const formInput = document.querySelector('.form__input');
+
+let date;
+
+formInput.addEventListener('input', function (e) {
+    if (e.target.value) {
+        const inputDate = new Date(e.target.value);
+        const day = inputDate.getDate();
+        const month = inputDate.getMonth();
+        const year = new Date().getFullYear();
+        date = new Date(year, month, day);
+        if (date < Date.now()) {
+            date = new Date(year + 1, month, day);
+        }
+        formButton.removeAttribute('disabled');
+        setInterval(countdownTimer, 1000);
+    }
+});
+
+formButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    formContainer.classList.add('hidden');
+    timer.classList.remove('hidden');
+});
 
 const countdownTimer = () => {
     const diff = date - new Date();

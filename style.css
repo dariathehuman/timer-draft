@@ -2,6 +2,18 @@
     box-sizing: border-box;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; // Yeah, yeah everybody write about it
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
 .body {
     margin: 0;
     height: 100vh;
@@ -10,11 +22,65 @@
     overflow: hidden;
 }
 
-.timer {
+.timer,
+.form-section {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+.form__title {
+    color: #6d5dfc;
+    font-size: 32px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.form__inputs {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 4px;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.form__label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 40px;
+}
+
+.form__label span {
+    font-size: 12px;
+}
+
+.form__input {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 2px;
+    font-size: 16px;
+    box-shadow: inset .2rem .2rem .5rem #c8d0e7,
+    inset -.2rem -.2rem .5rem #FFFFFF;
+    background: none;
+    font-family: inherit;
+    color: #9baacf;
+}
+
+.form__button {
+    width: 100%;
+    height: 56px;
+    border-radius: 1rem;
+    box-shadow: .3rem .3rem .6rem #c8d0e7,
+    -.2rem -.2rem .5rem #FFFFFF;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .3s ease;
 }
 
 .timer__border {
@@ -80,19 +146,23 @@
 }
 
 @media (max-width: 768px) {
+    .form__title {
+        font-size: 20px;
+    }
+
     .timer__list,
     .timer__wave-1,
     .timer__wave-2 {
-        width: 320px;
-        height: 320px;
+        width: 240px;
+        height: 240px;
     }
 
     .timer__item-number {
-        font-size: 50px;
+        font-size: 30px;
     }
 
     .timer__item-text {
-        font-size: 18px;
+        font-size: 14px;
     }
 
     .timer__list {
@@ -114,4 +184,8 @@
         transform: scale(2);
         opacity: 0;
     }
+}
+
+.hidden {
+    display: none;
 }

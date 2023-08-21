@@ -7,7 +7,35 @@
     <title>Title</title>
 </head>
 <body class="body">
-<section class="timer">
+<section class="form-section">
+    <form class="form">
+        <p class="form__title">Enter an important date for you</p>
+        <div class="form__inputs">
+            <label class="form__label" for="day">
+                <input class="form__input" type="number" min="1" max="31" id="day">
+                <span>day</span>
+            </label>
+            <label class="form__label" for="month">
+                <input class="form__input" type="number" min="1" max="12" id="month">
+                <span>month</span>
+            </label>
+            <label class="form__label" for="year">
+                <input class="form__input" type="number" min="2023" max="2100" id="year">
+                <span>year</span>
+            </label>
+            <label class="form__label" for="min">
+                <input class="form__input" type="number" min="0" max="60" id="min">
+                <span>min</span>
+            </label>
+            <label class="form__label" for="sec">
+                <input class="form__input" type="number" min="0" max="60" id="sec">
+                <span>sec</span>
+            </label>
+        </div>
+        <button class="form__button" type="submit" disabled>Submit</button>
+    </form>
+</section>
+<section class="timer hidden">
     <div class="timer__border">
         <ul class="timer__list">
             <li class="timer__item">
@@ -20,11 +48,11 @@
             </li>
             <li class="timer__item">
                 <p class="timer__item-number timer__minutes"></p>
-                <p class="timer__item-text">minutes</p>
+                <p class="timer__item-text">min</p>
             </li>
             <li class="timer__item">
                 <p class="timer__item-number timer__seconds"></p>
-                <p class="timer__item-text">seconds</p>
+                <p class="timer__item-text">sec</p>
             </li>
         </ul>
         <span class="timer__wave-1"></span>
