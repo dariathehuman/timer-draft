@@ -4,35 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" type="text/css">
-    <title>Title</title>
+    <title>Timer</title>
 </head>
 <body class="body">
 <section class="form-section">
     <form class="form">
-        <p class="form__title">Enter an important date for you</p>
+        <p class="form__title">Enter an important date for you 📆</p>
         <div class="form__inputs">
             <label class="form__label" for="day">
-                <input class="form__input" type="number" min="1" max="31" id="day">
+                <input class="form__input form__input--day" type="number" min="1" max="31" id="day" required>
                 <span>day</span>
             </label>
             <label class="form__label" for="month">
-                <input class="form__input" type="number" min="1" max="12" id="month">
+                <input class="form__input form__input--month" type="number" min="1" max="12" id="month" required>
                 <span>month</span>
             </label>
             <label class="form__label" for="year">
-                <input class="form__input" type="number" min="2023" max="2100" id="year">
+                <input class="form__input form__input--year" type="number" min="2023" max="2100" id="year" required>
                 <span>year</span>
             </label>
+            <label class="form__label" for="hours">
+                <input class="form__input form__input--hours" type="number" min="0" max="23" id="hours" required>
+                <span>hours</span>
+            </label>
             <label class="form__label" for="min">
-                <input class="form__input" type="number" min="0" max="60" id="min">
+                <input class="form__input form__input--min" type="number" min="0" max="60" id="min" required>
                 <span>min</span>
             </label>
-            <label class="form__label" for="sec">
-                <input class="form__input" type="number" min="0" max="60" id="sec">
-                <span>sec</span>
-            </label>
         </div>
-        <button class="form__button" type="submit" disabled>Submit</button>
+        <button class="form__button" type="submit" disabled>Start count 💫</button>
     </form>
 </section>
 <section class="timer hidden">

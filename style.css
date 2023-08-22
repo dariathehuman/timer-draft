@@ -30,7 +30,40 @@ input[type="number"]:focus {
     height: 100vh;
 }
 
+.form-section {
+    position: relative;
+}
+
+.form-section::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 100%;
+    background-image: url(bg.jpeg);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: cover;
+    z-index: 1;
+    opacity: 0.1;
+}
+
+.form {
+    position: relative;
+    padding: 24px;
+    max-width: 400px;
+    box-shadow: .3rem .3rem .6rem #c8d0e7,
+    -.2rem -.2rem .5rem #FFFFFF;
+    border-radius: 12px;
+    background-color: #ecf0fb;
+    z-index: 2;
+}
+
 .form__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: #6d5dfc;
     font-size: 32px;
     font-weight: 200;
@@ -40,7 +73,7 @@ input[type="number"]:focus {
 .form__inputs {
     display: grid;
     grid-auto-flow: column;
-    grid-column-gap: 4px;
+    grid-column-gap: 10px;
     justify-content: center;
     margin-bottom: 16px;
 }
@@ -54,11 +87,14 @@ input[type="number"]:focus {
 
 .form__label span {
     font-size: 12px;
+    color: #998ef8;
 }
 
 .form__input {
-    width: 36px;
-    height: 36px;
+    margin-bottom: 4px;
+    width: 48px;
+    height: 48px;
+    padding: 10px 10px 10px 14px;
     border: none;
     border-radius: 2px;
     font-size: 16px;
@@ -73,6 +109,10 @@ input[type="number"]:focus {
     width: 100%;
     height: 56px;
     border-radius: 1rem;
+    font-size: 20px;
+    border: none;
+    background: #6d5dfc;
+    color: #FFFFFF;
     box-shadow: .3rem .3rem .6rem #c8d0e7,
     -.2rem -.2rem .5rem #FFFFFF;
     justify-self: center;
@@ -81,6 +121,10 @@ input[type="number"]:focus {
     justify-content: center;
     cursor: pointer;
     transition: .3s ease;
+}
+
+.form__button:disabled {
+    background: #c8d0e7;
 }
 
 .timer__border {
